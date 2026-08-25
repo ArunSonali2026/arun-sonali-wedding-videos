@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Arun & Sonali Wedding Videos</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div class="brand">💍 <span>Arun & Sonali</span> <small>Wedding Videos</small></div><button id="logout" class="ghost hidden">Logout</button></header>
+<main>
+<section id="home" class="hero">
+<div class="hero-card"><div class="rings">💍 ❤️</div><h1>Arun & Sonali</h1><h2>Wedding Videos</h2><p>Our private collection of beautiful memories.</p><div class="actions"><button onclick="show('login')">Login</button><button class="outline" onclick="show('request')">Request Access</button></div><p class="privacy">🔒 Private • Access only after approval</p></div>
+</section>
+<section id="login" class="panel hidden"><div class="box"><h2>Private Login</h2><form id="loginForm"><input name="email" type="email" placeholder="Email" required><input name="password" type="password" placeholder="Password" required><button>Login</button></form><p id="loginMsg"></p><button class="link" onclick="show('request')">Need access? Request it</button></div></section>
+<section id="request" class="panel hidden"><div class="box"><h2>Request Access</h2><p>Admin approval is required before you can watch videos.</p><form id="requestForm"><input name="name" placeholder="Your name" required><input name="email" type="email" placeholder="Email" required><input name="password" type="password" minlength="8" placeholder="Create password (8+ characters)" required><button>Send Request</button></form><p id="requestMsg"></p><button class="link" onclick="show('login')">Already approved? Login</button></div></section>
+<section id="library" class="panel hidden"><div class="box wide"><h2>🎬 Private Video Library</h2><div id="videoGrid" class="grid"></div></div></section>
+<section id="admin" class="panel hidden"><div class="box wide"><h2>⚙️ Admin Panel</h2>
+<div class="admin-grid">
+<div><h3>Upload Video</h3><form id="uploadForm"><input name="title" placeholder="Video title"><input name="video" type="file" accept="video/*" required><button>Upload Video</button></form><p id="uploadMsg"></p></div>
+<div><h3>Access Requests / Users</h3><div id="users"></div></div>
+</div><h3>Videos</h3><div id="adminVideos" class="admin-list"></div></div></section>
+</main>
+<div id="player" class="modal hidden"><div class="modal-box"><button class="close" onclick="closePlayer()">×</button><h2 id="playerTitle"></h2><video id="video" controls playsinline controlsList="nodownload"></video></div></div>
+<script src="/app.js"></script>
+</body></html>

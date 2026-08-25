@@ -244,4 +244,10 @@ app.use((err,req,res,next) => {
   console.error(err); res.status(500).json({error:"Server error"});
 });
 
-app.listen(PORT, () => console.log(`Arun & Sonali Wedding Videos running at http://localhost:${PORT}`));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Arun & Sonali Wedding Videos running on port ${PORT}`);
+});

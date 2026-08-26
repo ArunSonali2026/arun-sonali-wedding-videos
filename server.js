@@ -17,7 +17,7 @@ const VIDEOS_DIR = path.join(__dirname, "private_videos");
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 if (!fs.existsSync(VIDEOS_DIR)) fs.mkdirSync(VIDEOS_DIR, { recursive: true });
 
-const db = sqlite(path.join(DATA_DIR, "wedding.sqlite"));
+const db = sqlite(path.join(DATA_DIR, "wedding_2.sqlite"));
 
 db.exec(`
   CREATE TABLE IF NOT EXISTS users (
